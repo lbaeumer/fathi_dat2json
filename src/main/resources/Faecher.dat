@@ -1,0 +1,136 @@
+﻿InternKrz|StatistikKrz|Bezeichnung|BezeichnungZeugnis|BezeichnungÜZeugnis|Unterrichtsprache|Sortierung S1|Sortierung S2|Gewichtung
+D|D|Deutsch|Deutsch|Deutsch|D|10|10|1
+E|E|Englisch|Englisch|Englisch|D|20|20|1
+F6|F6|Französisch, Beginn in Jahrgangsklasse6|Französisch|Französisch ab Kl. 6||30|30|1
+F7|F7|Französisch, Beginn in Jahrgangsklasse 7|Französisch|Französisch ab Kl. 7||40|40|1
+L6|L6|Lateinisch, Beginn in Jahrgangsklasse 6|Latein|Latein ab Kl. 6||50|50|1
+L7|L7|Lateinisch, Beginn in Jahrgangsklasse 7|Latein|Latein ab Kl. 7||60|60|1
+I0|I0|Italienisch, Beginn in der Einführungsphase|Italienisch|Italienisch||70|70|1
+I1|I1|Italienisch, Beginn in Jahrgangsklasse 11|Italienisch, Beginn in Jahrgangsklasse 11|Italienisch, Beginn in Jahrgangsklasse 11||80|80|1
+KU|KU|Kunst|Kunst|Kunst|D|90|90|1
+MU|MU|Musik|Musik|Musik|D|100|100|1
+LI|LI|Literatur|Literatur|Literatur|D|110|110|1
+GE|GE|Geschichte|Geschichte|Geschichte|D|120|120|1
+EK|EK|Erdkunde|Erdkunde|Erdkunde|D|130|130|1
+SW|SW|Sozialwissenschaften|Sozialwissenschaften|Sozialwissenschaften|D|140|140|1
+PL|PL|Philosophie|Philosophie|Philosophie|D|150|150|1
+PK|PK|Politik|Politik|Politik||160|450|1
+PP|PP|Praktische Philosophie|Praktische Philosophie|Praktische Philosophie||170|310|1
+KR|KR|Kath. Religionslehre|Religionslehre|Religionslehre|D|180|160|1
+ER|ER|Evangel. Religionslehre|Religionslehre|Religionslehre|D|190|170|1
+AR|AR|Alevitische Religionslehre nach den Grundsätzen des AABF|Religionslehre|Religionslehre||200|180|1
+M|M|Mathematik|Mathematik|Mathematik|D|210|190|1
+BI|BI|Biologie|Biologie|Biologie|D|220|200|1
+PH|PH|Physik|Physik|Physik|D|230|210|1
+CH|CH|Chemie|Chemie|Chemie|D|240|220|1
+IF|IF|Informatik|Informatik|Informatik|D|250|230|1
+SP|SP|Sport|Sport|Sport|D|260|240|1
+F8|F8|Französisch, Beginn in Jahrgangsklasse 8|Französisch|Französisch ab Kl. 8||270|290|1
+F9|F9|Französisch, Beginn in Jahrgangsklasse 9|Französisch ab Kl. 9|Französisch ab Kl. 9||280|300|1
+WP2 IF|IF|WP2 Informatik|Informatik|Informatik||290|370|1
+DS|DS|Darstellen und Gestalten|Darstellen und Gestalten|Darstellen und Gestalten||295|32000|1
+WP2 EA|KU|WP2 English in Action|English in Action|English in Action||300|320|1
+WP2 GP|GE|WP2 Geschichte/Politik|Geschichte/Politik|Geschichte/Politik||310|350|1
+WP2 DS|KU|WP2 Design und Architektur|Design und Architektur|Design und Architektur||320|330|1
+WP2 MU|MU|WP2 Musik|Musik|Musik||330|340|1
+WP2 KU|KU|WP2 Kunst|Kunst|Kunst||340|360|1
+WP2 EK|EK|WP2 Erdkunde|Erdkunde|Erdkunde||350|380|1
+WP2 PH|PH|WP2 Himmelsphysik|Himmelsphysik|Himmelsphysik||360|390|1
+SOL|PA|Projekt Soziales Lernen|Projekt Soziales Lernen|Projekt Soziales Lernen||370|400|1
+DIGI|IF|Digitale Grundbildung|Digitale Grundbildung|Digitale Grundbildung||380|1350|1
+VKD|VX|Vertiefungskurs Deutsch|Vertiefungskurs Deutsch|Vertiefungskurs Deutsch||390|250|1
+VKE|VX|Vertiefungskurs Englisch|Vertiefungskurs Englisch|Vertiefungskurs Englisch||400|260|1
+VKM|VX|Vertiefungskurs Mathematik|Vertiefungskurs Mathematik|Vertiefungskurs Mathematik||410|270|1
+PKBI|PX|Projektkurs Biologie|Projektkurs Biologie|Projektkurs Biologie||420|280|1
+AG D|D|AG Deutsch|AG Deutsch|AG Deutsch||430|1210|1
+AG E|E|AG Englisch|AG Englisch|AG Englisch||440|1200|1
+AG L|L6|AG Latein|AG Latein|AG Latein||450|1160|1
+AG F|F6|AG Französisch|AG Französisch|AG Französisch||460|1100|1
+AG MU|MU|AG Musik|AG MU|AG MU||470|1110|1
+AG KU|KU|AG Kunst|AG Kunst|AG Kunst||480|1120|1
+AG PK|PK|AG Politik|AG Politik|AG Politik||490|1130|1
+AG SW|SW|AG Sozialwissenschaften|AG Sozialwissenschaften|AG Sozialwissenschaften||500|1280|1
+AG GE|GE|AG Geschichte|AG Geschichte|AG Geschichte||510|1140|1
+AG EK|EK|AG Erdkunde|AG Erdkunde|AG Erdkunde||520|1150|1
+AG PA|PA|AG Erziehungswissenschaft|AG Erziehungswissenschaft|AG Erziehungswissenschaft||530|1290|1
+AG M|M|AG Mathematik|AG Mathematik|AG Mathematik||540|1190|1
+AG BI|BI|AG Biologie|AG Biologie|AG Biologie||550|1170|1
+AG CH|CH|AG Chemie|AG Chemie|AG Chemie||560|1090|1
+AG PH|PH|AG Physik|AG Physik|AG Physik||570|1180|1
+AG TC|TC|AG Technik|AG Technik|AG Technik||580|1310|1
+AG IF|IF|AG Informatik|AG Informatik|AG Informatik||590|1300|1
+AG SP|SP|AG Sport|AG Sport|AG Sport||600|1240|1
+AG Aquarien|BI|AG Aquarien|AG Aquarien|AG Aquarien||610|580|1
+AG AntiMobbing|SW|AG Anti-Mobbing|AG AntiMobbing|AG AntiMobbing||620|510|1
+AG Astronomie|PH|AG Astronomie|AG Astronomie|AG Astronomie||630|520|1
+AG Basketball|SP|AG Basketball|AG Basketball|AG Basketball||640|610|1
+AG Bibliothek|D|AG Bibliotheks|AG Bibliothek|AG Bibliothek||650|620|1
+AG Big Band|MU|AG Big Band|AG Big Band|AG Big Band||660|500|1
+AG CAM|E|AG Cambridge Zertifikatskurs|Cambridge Zertifikatskurs|Cambridge Zertifikatskurs||670|930|1
+AG Chemie|CH|AG Chemie|AG Chemie|AG Chemie||680|630|1
+AG Chor|MU|AG Chor|AG Chor|AG Chor||690|640|1
+AG Computer|IF|AG Computer|AG Computer|AG Computer||700|650|1
+AG DELF|F6|AG DELF|DELF|DELF||710|900|1
+AG Drogenberatung|PA|AG Drogenberatungs|AG Drogenberatung|AG Drogenberatung||720|660|1
+AG EBM|PA|AG EBM|Begabtenförderung|Begabtenförderung||730|670|1
+AG English Club|E|AG English Club|AG English-Club|AG English-Club||740|680|1
+AG English Theatre|E|AG English Theatre|AG English Theatre|AG English Theatre||750|470|1
+AG Foto-Film|KU|AG Foto-Film|AG Foto-Film|AG Foto-Film||760|730|1
+AG Fußball|SP|AG Fußball|AG Fußball|AG Fußball||770|740|1
+AG Handball|SP|AG Handball|AG Handball|AG Handball||780|750|1
+AG Hausaufgabenbetr.|PA|AG Hausaufgabenbetreuung|AG Hausaufgabenbetreuung|AG Hausaufgabenbetreuung||790|760|1
+AG Hip-Hop|SP|AG Hip-Hop|AG Hip-Hop|AG Hip-Hop||800|540|1
+AG Homepage|IF|AG Homepage|AG Homepage|AG Homepage||810|770|1
+AG Instrumental|MU|AG Instrumental-Ensemble|AG Instrumental-Ensemble|AG Instrumental-Ensemble||820|780|1
+AG Kampfsport|SP|AG Kampfsport|AG Kampfsport|AG Kampfsport||830|490|1
+AG Kreatives Schreib|D|AG Kreatives Schreiben|AG Kreatives Schreiben|AG Kreatives Schreiben||840|570|1
+AG Kunst|KU|AG Kunst|AG Kunst|AG Kunst||850|790|1
+AG Medienscouts|IF|AG Medienscouts|AG Medienscouts|AG Medienscouts||860|560|1
+AG Medienwerkstatt|IF|AG Medienwerkstatt|AG Medienwerkstatt|AG Medienwerkstatt||870|700|1
+AG Musik|MU|AG Musik|AG Musik|AG Musik||880|800|1
+AG Nacharbeit|PA|AG Nacharbeits|AG Nacharbeit|AG Nacharbeit||890|810|1
+AG Naturwissenschaft|BI|AG Naturwissenschaft|AG Naturwissenschaft|AG Naturwissenschaft||900|950|1
+AG Orchester|MU|AG Orchester|AG Orchester|AG Orchester||910|820|1
+AG Pausenaufsicht|PA|AG Pausenaufsicht|AG Pausenaufsicht|AG Pausenaufsicht||920|830|1
+AG Pausensport|SP|AG Pausensport|AG Pausenaufsicht|AG Pausenaufsicht||930|840|1
+AG Polnisch|P|AG Polnisch|AG Polnisch|AG Polnisch||940|710|1
+AG SoR|PK|AG Schule ohne Rassismus|AG Schule ohne Rassismus|AG Schule ohne Rassismus||950|600|1
+AG Rechtskunde|RK|AG Rechtskunde|AG Rechtskunde|AG Rechtskunde||960|850|1
+AG Rock|MU|AG Rock|AG Rock|AG Rock||970|860|1
+AG Rugby|SP|AG Rugby|AG Rugby|AG Rugby||980|550|1
+AG Sani|BI|AG Schulsanitätsdienst|Schulsanitätsdienst|Schulsanitätsdienst||990|690|1
+AG Schülerzeitung|D|AG Schülerzeitung|AG Schülerzeitung|AG Schülerzeitung||1000|870|1
+AG Singkreis|MU|AG Singkreis|AG Singkreis|AG Singkreis||1010|880|1
+AG Streitschlichtung|PA|AG Streitschlichtung|AG Streitschlichtung|AG Streitschlichtung||1020|890|1
+AG Tanz|SP|AG Tanz|AG Tanz|AG Tanz||1030|910|1
+AG Tea Time|E|AG Tea Time|AG Tea Time|AG Tea Time||1040|530|1
+AG Tea-Time|E|AG Tea-Time|AG Tea-Time|AG Tea-Time||1050|590|1
+AG Theater|D|AG Theater|AG Theater|AG Theater||1060|920|1
+AG Tischtennis|SP|AG Tischtennis|AG Tischtennis|AG Tischtennis||1070|480|1
+AG Tonstudio|MU|AG Tonstudio|AG Tonstudio|AG Tonstudio||1080|460|1
+AG Volleyball|SP|AG Volleyball|AG Volleyball|AG Volleyball||1090|720|1
+AG Digitale Foto|KU|AG Digitale Fotografie|AG Digitale Fotografie|AG Digitale Fotografie||1100|940|1
+AG Kreativ|KU|AG Kreativ|AG Kreativ|AG Kreativ||1110|1230|1
+AG Technik|MU|AG Technik|AG Technik|AG Technik||1120|1220|1
+HSU Albanisch|LM|HSU Albanisch|HSU Albanisch|HSU Albanisch||1130|970|1
+HSU Arabisch|AM|HSU Arabisch|HSU Arabisch|HSU Arabisch||1140|960|1
+HSU Griechisch|GM|HSU Griechisch|HSU Griechisch|HSU Griechisch||1150|990|1
+HSU Italienisch|IM|HSU Italienisch|HSU Italienisch|HSU Italienisch||1160|1020|1
+HSU Polnisch|PM|HSU Polnisch|HSU Polnisch|HSU Polnisch||1170|1000|1
+HSU Kroatisch|CM|HSU Kroatisch|HSU Kroatisch|HSU Kroatisch||1180|1330|1
+HSU Russisch|RM|HSU Russisch|HSU Russisch|HSU Russisch||1190|1030|1
+HSU Spanisch|SM|HSU Spanisch|HSU Spanisch|HSU Spanisch||1200|1010|1
+HSU Türkisch|TM|HSU Türkisch|HSU Türkisch|HSU Türkisch||1210|980|1
+NH|NH|Herkunftssprache anstelle einer Pflichtfremdsprache - Polnisch|Polnisch|Polnisch||1220|1320|1
+RH|RH|Herkunftssprache anstelle einer Pflichtfremdsprache - Arabisch|Arabisch|Arabisch||1230|1340|1
+I|I|Italienisch|Italienisch|Italienisch|D|1240|440|1
+F|F|Französisch|Französisch|Französisch|D|1260|420|1
+L|L|Lateinisch|Lateinisch|Lateinisch|D|1270|430|1
+FUD|D|Förderunterricht Deutsch|Förderunterricht Deutsch|Förderunterricht Deutsch||1280|1040|1
+FUE|RK|Förderunterricht Englisch|Förderunterricht Englisch|Förderunterricht Englisch||1290|1050|1
+FUF|F|Förderunterricht Französisch|Förderunterricht Französisch|Förderunterricht Französisch||1300|1060|1
+FUL|L|Förderunterricht Latein|Förderunterricht Latein|Förderunterricht Latein||1310|1070|1
+FUM|M|Förderunterricht Mathematik|Förderunterricht Mathematik|Förderunterricht Mathematik||1320|1080|1
+A|A|Arabisch|Arabisch|Arabisch||1330|1250|1
+R6|R6|Russisch|Russisch|Russisch||1340|1260|1
+Dari|XM|Dari|Dari|Dari||1350|1270|1
