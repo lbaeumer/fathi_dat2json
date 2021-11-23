@@ -17,7 +17,7 @@ public class Dat2Json {
 
     public static void main(String[] args) throws IOException {
 
-        List<Map<String, Object>> resultMap = new ArrayList<>();
+        Map<String, Map<String, Object>> resultMap = new HashMap<>();
         Dat2Json d = new Dat2Json();
 
         d.handleFile(resultMap, "SchuelerBasisdaten.dat");
@@ -26,18 +26,23 @@ public class Dat2Json {
 
         try (FileWriter w = new FileWriter("result.json")) {
             w.append(new GsonBuilder().setPrettyPrinting()
-                    .create().toJson(resultMap));
+                    .create().toJson(new ArrayList<>(resultMap.values())));
         }
     }
 
-    private void handleFile(List<Map<String, Object>> resultMap, String file) {
+    private void handleFile(Map<String, Map<String, Object>> resultMap, String file) {
         Map<String, Map> m = getContentByStudent(file);
         m.forEach((k, v) -> {
-            Map<String, Object> map = new HashMap<>();
-            resultMap.add(map);
-            map.put("nachname", k.split("\\|")[0]);
-            map.put("vorname", k.split("\\|")[1]);
-            map.put("geburtsdatum", k.split("\\|")[2]);
+            // k = nachname|vorname|geburtsdatum
+            // v = map with attributes
+            Map<String, Object> map = resultMap.get(k);
+            if (map == null) {
+                map = new HashMap<>();
+                map.put("nachname", k.split("\\|")[0]);
+                map.put("vorname", k.split("\\|")[1]);
+                map.put("geburtsdatum", k.split("\\|")[2]);
+                resultMap.put(k, map);
+            }
             map.put(file.substring(8, file.length() - 4)
                     .toLowerCase(Locale.ROOT), v);
         });
