@@ -23,18 +23,21 @@ public class Dat2Json {
         d.handleFile(resultMap, "SchuelerBasisdaten.dat");
         d.handleFile(resultMap, "SchuelerZusatzdaten.dat");
         d.handleFile(resultMap, "SchuelerMerkmale.dat");
+        d.handleFile(resultMap, "SchuelerBisherigeSchulen.dat");
+        d.handleFile(resultMap, "SchuelerLeistungsdaten.dat");
+        d.handleFile(resultMap, "SchuelerErzieher.dat");
 
-        try (FileWriter w = new FileWriter("result.json")) {
+        try (FileWriter w = new FileWriter("../fathi_dat2json/src/main/resources/result.json")) {
             w.append(new GsonBuilder().setPrettyPrinting()
                     .create().toJson(new ArrayList<>(resultMap.values())));
         }
     }
 
     private void handleFile(Map<String, Map<String, Object>> resultMap, String file) {
-        Map<String, Map> m = getContentByStudent(file);
+        Map<String, List<Map<String, Object>>> m = getContentByStudent(file);
         m.forEach((k, v) -> {
             // k = nachname|vorname|geburtsdatum
-            // v = map with attributes
+            // v = List<map with attributes>
             Map<String, Object> map = resultMap.get(k);
             if (map == null) {
                 map = new HashMap<>();
@@ -43,40 +46,44 @@ public class Dat2Json {
                 map.put("geburtsdatum", k.split("\\|")[2]);
                 resultMap.put(k, map);
             }
-            map.put(file.substring(8, file.length() - 4)
-                    .toLowerCase(Locale.ROOT), v);
+
+            if (v.size() == 1) {
+                map.put(file.substring(8, file.length() - 4)
+                        .toLowerCase(Locale.ROOT), v.get(0));
+            } else if (v.size() > 1) {
+                map.put(file.substring(8, file.length() - 4)
+                        .toLowerCase(Locale.ROOT), v);
+            }
         });
     }
 
-    private Map<String, Map> getContentByStudent(String file) {
+    private Map<String, List<Map<String, Object>>> getContentByStudent(String file) {
         List<String> lines = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/" + file)))
                 .lines().parallel().collect(Collectors.toList());
 
         String[] headerAttributes = lines.get(0).split("\\|");
 
-        Map<String, Map> map = new HashMap<>();
+        Map<String, List<Map<String, Object>>> map = new HashMap<>();
         for (int i = 1; i < lines.size(); i++) {
             String[] values = lines.get(i).split("\\|");
 
-            if (false && headerAttributes.length != values.length) {
-                System.out.println(
-                        file + " line " + i
-                                + ";" + headerAttributes.length + "=" + values.length
-                                + "\n" + values[0]
-                                + "\n" + headerAttributes[10] + "=" + values[10]
-                                + "\n" + headerAttributes[20] + "=" + values[20]
-                                + "\n" + headerAttributes[30] + "=" + values[30]
-                                + "\n" + headerAttributes[40] + "=" + values[40]
-                );
+            String key = values[0].trim() + "|" + values[1].trim() + "|" + values[2].trim();
+
+            List<Map<String, Object>> listByStudent = map.get(key);
+            if (listByStudent == null) {
+                listByStudent = new ArrayList<>();
+                map.put(key, listByStudent);
             }
-            Map<String, Object> m = new HashMap<>();
+
+            Map<String, Object> studentSet = new HashMap<>();
+            listByStudent.add(studentSet);
+
             // skip first 3 elements
             for (int j = 3; j < headerAttributes.length; j++) {
-                m.put(mapKey(headerAttributes[j].trim()),
+                studentSet.put(mapKey(headerAttributes[j].trim()),
                         (j < values.length ? values[j].trim() : "")
                 );
             }
-            map.put(values[0].trim() + "|" + values[1].trim() + "|" + values[2].trim(), m);
         }
         return map;
     }
