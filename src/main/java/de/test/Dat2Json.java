@@ -17,9 +17,13 @@ public class Dat2Json {
 
     public static void main(String[] args) throws IOException {
 
+        // Schüler -> (Key -> Data)
+        // Schüler, z.B. Fathi|Durst|01.01.1950
+        // Key in { 'geburtsdatum', 'nachname', 'vorname', 'basisdaten', ... }
         Map<String, Map<String, Object>> resultMap = new HashMap<>();
         Dat2Json d = new Dat2Json();
 
+        // Datenstruktur mit Inhalten aus Datei füllen
         d.handleFile(resultMap, "SchuelerBasisdaten.dat");
         d.handleFile(resultMap, "SchuelerZusatzdaten.dat");
         d.handleFile(resultMap, "SchuelerMerkmale.dat");
@@ -28,13 +32,32 @@ public class Dat2Json {
         d.handleFile(resultMap, "SchuelerErzieher.dat");
 
         try (FileWriter w = new FileWriter("../fathi_dat2json/src/main/resources/result.json")) {
-            w.append(new GsonBuilder().setPrettyPrinting()
-                    .create().toJson(new ArrayList<>(resultMap.values())));
+            // Datenstruktur in Json konvertieren
+            String json = new GsonBuilder().setPrettyPrinting()
+                    .create().toJson(new ArrayList<>(resultMap.values()));
+
+            // in die Datei schreiben
+            w.append(json);
         }
     }
 
+    // das file einlesen und die resultmap befüllen
     private void handleFile(Map<String, Map<String, Object>> resultMap, String file) {
+
+        // Inhalt des Files einlesen
+        // Schüler -> List (key -> value)
         Map<String, List<Map<String, Object>>> m = getContentByStudent(file);
+
+        // max Anzahl an Datensätzen der Datei, um später die Datenstruktur zu bestimmen (List oder einzelner Eintrag)
+        // wenn maxSize > 1, dann ist das eine Liste z.B. Erzieher
+        // wenn maxSite = 1, dann ein Einzeltyp, z.B. Basisdaten
+        int maxSizeTmp = 0;
+        for (List l : m.values()) {
+            if (l.size() > maxSizeTmp) maxSizeTmp = l.size();
+        }
+        final int maxSize = maxSizeTmp;
+
+        // in das richtige Format bringen
         m.forEach((k, v) -> {
             // k = nachname|vorname|geburtsdatum
             // v = List<map with attributes>
@@ -47,10 +70,10 @@ public class Dat2Json {
                 resultMap.put(k, map);
             }
 
-            if (v.size() == 1) {
+            if (maxSize == 1 && v.size() == 1) {
                 map.put(file.substring(8, file.length() - 4)
                         .toLowerCase(Locale.ROOT), v.get(0));
-            } else if (v.size() > 1) {
+            } else if (maxSize > 1) {
                 map.put(file.substring(8, file.length() - 4)
                         .toLowerCase(Locale.ROOT), v);
             }
@@ -58,6 +81,7 @@ public class Dat2Json {
     }
 
     private Map<String, List<Map<String, Object>>> getContentByStudent(String file) {
+        // file einlesen
         List<String> lines = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/" + file)))
                 .lines().parallel().collect(Collectors.toList());
 
@@ -88,6 +112,8 @@ public class Dat2Json {
         return map;
     }
 
+    // da einige Characters in json nicht erlaubt sind, werden ' ', -, . in einen Unterstrich geändert
+    // Umlaute werden konvertiert
     private String mapKey(String key) {
         return key.toLowerCase(Locale.ROOT).trim()
                 .replaceAll("[\\ \\-\\.]+", "_")
