@@ -7,10 +7,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class Dat2Json {
@@ -20,16 +23,19 @@ public class Dat2Json {
         // Schüler -> (Key -> Data)
         // Schüler, z.B. Fathi|Durst|01.01.1950
         // Key in { 'geburtsdatum', 'nachname', 'vorname', 'basisdaten', ... }
-        Map<String, Map<String, Object>> resultMap = new HashMap<>();
+        Map<String, Map<String, Object>> resultMap = new TreeMap<>();
         Dat2Json d = new Dat2Json();
 
         // Datenstruktur mit Inhalten aus Datei füllen
         d.handleFile(resultMap, "SchuelerBasisdaten.dat");
-        d.handleFile(resultMap, "SchuelerZusatzdaten.dat");
-        d.handleFile(resultMap, "SchuelerMerkmale.dat");
         d.handleFile(resultMap, "SchuelerBisherigeSchulen.dat");
-        d.handleFile(resultMap, "SchuelerLeistungsdaten.dat");
         d.handleFile(resultMap, "SchuelerErzieher.dat");
+        d.handleFile(resultMap, "SchuelerLeistungsdaten.dat");
+        d.handleFile(resultMap, "SchuelerMerkmale.dat");
+        d.handleFile(resultMap, "SchuelerZusatzdaten.dat");
+
+        // wenn eine dat Datei leer ist, kannst du so leere Listen im Output erzeugen
+        resultMap.forEach((student, map) -> map.put("adressen", Collections.EMPTY_LIST));
 
         try (FileWriter w = new FileWriter("../fathi_dat2json/src/main/resources/result.json")) {
             // Datenstruktur in Json konvertieren
@@ -63,7 +69,7 @@ public class Dat2Json {
             // v = List<map with attributes>
             Map<String, Object> map = resultMap.get(k);
             if (map == null) {
-                map = new HashMap<>();
+                map = new LinkedHashMap<>();
                 map.put("nachname", k.split("\\|")[0]);
                 map.put("vorname", k.split("\\|")[1]);
                 map.put("geburtsdatum", k.split("\\|")[2]);
@@ -99,7 +105,7 @@ public class Dat2Json {
                 map.put(key, listByStudent);
             }
 
-            Map<String, Object> studentSet = new HashMap<>();
+            Map<String, Object> studentSet = new TreeMap<>();
             listByStudent.add(studentSet);
 
             // skip first 3 elements
