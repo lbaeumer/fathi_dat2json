@@ -23,7 +23,7 @@ public class Dat2Json {
         // Schüler -> (Key -> Data)
         // Schüler, z.B. Fathi|Durst|01.01.1950
         // Key in { 'geburtsdatum', 'nachname', 'vorname', 'basisdaten', ... }
-        Map<String, Map<String, Object>> resultMap = new TreeMap<>();
+        Map<String, Map<String, Object>> resultMap = new LinkedHashMap<>();
         Dat2Json d = new Dat2Json();
 
         // Datenstruktur mit Inhalten aus Datei füllen
@@ -106,7 +106,7 @@ public class Dat2Json {
 
         String[] headerAttributes = lines.get(0).split("\\|");
 
-        Map<String, List<Map<String, Object>>> map = new HashMap<>();
+        Map<String, List<Map<String, Object>>> map = new LinkedHashMap<>();
         for (int i = 1; i < lines.size(); i++) {
             String[] values = lines.get(i).split("\\|");
 
@@ -118,7 +118,7 @@ public class Dat2Json {
                 map.put(key, listByStudent);
             }
 
-            Map<String, Object> studentSet = new TreeMap<>();
+            Map<String, Object> studentSet = new LinkedHashMap<>();
             listByStudent.add(studentSet);
 
             // skip first 3 elements
