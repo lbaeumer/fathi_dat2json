@@ -27,11 +27,24 @@ public class Dat2Json {
         Dat2Json d = new Dat2Json();
 
         // Datenstruktur mit Inhalten aus Datei füllen
+        d.handleFile(resultMap, "SchuelerAbiFaecher.dat");
+        d.handleFile(resultMap, "SchuelerAbitur.dat");
+        d.handleFile(resultMap, "SchuelerAdressen.dat");
+        d.handleFile(resultMap, "SchuelerASV.dat");
         d.handleFile(resultMap, "SchuelerBasisdaten.dat");
         d.handleFile(resultMap, "SchuelerBisherigeSchulen.dat");
         d.handleFile(resultMap, "SchuelerErzieher.dat");
+        d.handleFile(resultMap, "SchuelerFachBemerkungen.dat");
+        d.handleFile(resultMap, "SchuelerFehlstunden.dat");
+        d.handleFile(resultMap, "SchuelerGSDaten.dat");
         d.handleFile(resultMap, "SchuelerLeistungsdaten.dat");
+        d.handleFile(resultMap, "SchuelerLELS.dat");
+        d.handleFile(resultMap, "SchuelerLernabschnittsdaten.dat");
         d.handleFile(resultMap, "SchuelerMerkmale.dat");
+        d.handleFile(resultMap, "SchuelerSprachenfolgen.dat");
+        d.handleFile(resultMap, "SchuelerTelefonnummern.dat");
+        d.handleFile(resultMap, "SchuelerVermerke.dat");
+        d.handleFile(resultMap, "SchuelerZeugnisBemerkungen.dat");
         d.handleFile(resultMap, "SchuelerZusatzdaten.dat");
 
         // wenn eine dat Datei leer ist, kannst du so leere Listen im Output erzeugen
