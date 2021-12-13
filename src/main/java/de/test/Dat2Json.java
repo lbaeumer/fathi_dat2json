@@ -8,12 +8,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class Dat2Json {
@@ -83,18 +81,16 @@ public class Dat2Json {
             Map<String, Object> map = resultMap.get(k);
             if (map == null) {
                 map = new LinkedHashMap<>();
-                map.put("nachname", k.split("\\|")[0]);
-                map.put("vorname", k.split("\\|")[1]);
-                map.put("geburtsdatum", k.split("\\|")[2]);
+                map.put("Nachname", k.split("\\|")[0]);
+                map.put("Vorname", k.split("\\|")[1]);
+                map.put("Geburtsdatum", k.split("\\|")[2]);
                 resultMap.put(k, map);
             }
 
             if (maxSize == 1 && v.size() == 1) {
-                map.put(file.substring(8, file.length() - 4)
-                        .toLowerCase(Locale.ROOT), v.get(0));
+                map.put(file.substring(8, file.length() - 4), v.get(0));
             } else if (maxSize > 1) {
-                map.put(file.substring(8, file.length() - 4)
-                        .toLowerCase(Locale.ROOT), v);
+                map.put(file.substring(8, file.length() - 4), v);
             }
         });
     }
@@ -123,8 +119,19 @@ public class Dat2Json {
 
             // skip first 3 elements
             for (int j = 3; j < headerAttributes.length; j++) {
-                studentSet.put(mapKey(headerAttributes[j].trim()),
-                        (j < values.length ? values[j].trim() : "")
+                Object value = (j < values.length ? values[j].trim() : "");
+                // enforce non-string types
+                if ("N".equals(value)) {
+                    value = false;
+                }
+                if ("J".equals(value)) {
+                    value = false;
+                }
+                if (value != null && value.toString().matches("[1-9][0-9]*")
+                    || "0".equals(value)) {
+                    value = Integer.parseInt(value.toString());
+                }
+                studentSet.put(mapKey(headerAttributes[j].trim()), value
                 );
             }
         }
