@@ -134,7 +134,7 @@ public class Dat2Json {
     // da einige Characters in json nicht erlaubt sind, werden ' ', -, . in einen Unterstrich geändert
     // Umlaute werden konvertiert
     private String mapKey(String key) {
-        return key.toLowerCase(Locale.ROOT).trim()
+        return key.trim()
                 .replaceAll("[\\ \\-\\.]+", "_")
                 .replaceAll("ä", "ae")
                 .replaceAll("ö", "oe")
